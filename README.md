@@ -3,7 +3,7 @@
 > **Analyst:** Jonatan Alexander Guerrero Gomez | **Role Target:** SOC L1 / Jr. Cybersecurity Analyst
 > **Status:** Investigation Closed | **Severity:** High
 
-### Executive Summary
+## Executive Summary
 Hands-on SOC investigation exercise across four independent hosts in the LetsDefend EDR training environment. Investigation identified and contained two confirmed C2 (Command & Control) infections -- one NjRAT-based malware abusing ngrok tunneling infrastructure, and one fileless PowerShell payload delivered via a LOLBin (mshta.exe) -- plus an independent phishing/social engineering case. This project demonstrates L1 competencies: endpoint triage, process/malware analysis, threat intelligence correlation (VirusTotal, WHOIS, JARM, Passive DNS), MITRE ATT&CK mapping, and incident containment, applied with a strict no-assumption verification methodology.
 
 ## 1. Case Overview
@@ -19,7 +19,7 @@ Hands-on SOC investigation exercise across four independent hosts in the LetsDef
 
 **Host:** Jack-dev-server | **IP:** 172.16.17.81 | **OS:** Windows Server 2019 | **Role:** Server
 
-## Detection & Initial Discovery
+### Detection & Initial Discovery
 An initial DNS query was flagged from source 172.16.17.81 to 8.8.8.8 (Google Public DNS), resolving the domain ngrok.io.
 
 **Evidence - DNS Triage**
@@ -106,10 +106,10 @@ signals inconsistent with dedicated malicious infrastructure. Documented as low-
 
 **Host:** Roberto | **IP:** 172.16.17.38 | **OS:** Windows 10 | **User:** roberto
 
-### Indentity Clarification
+### Identity Clarification
 Cross-verification confirmed "Robert" (172.16.17.189) and "Roberto" (172.16.17.38) are two distinct, independent hosts -- not the same person with inconsistent naming. This hypothesis was tested and rejected via direct query to the Endpoint module. See Case 4 for Robert's independent investigation.
 
-### Entry Vector - Not Determained
+### Entry Vector - Not Determined
 Browser history was reviewed for temporal correlation with the confirmed C2 connection. Entries found had no apparent temporal relationship to the incident. The entry vector for Ps1.hta could not be determined with the evidence available -- documented as an honest scope limitation, not a forced finding.
 
 ### Execution Chain
